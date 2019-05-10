@@ -16,10 +16,10 @@ function Header(){
     $this->Cell(100);
 	 $this->Ln(10);
     // Title
-    $this->Cell(220,60,'KIMIRONKO CAR PARK',0,0,'C');
+    $this->Cell(210,60,'KIMIRONKO CAR PARK',0,0,'C');
 	$this->Ln(6);
 	$this->SetFont('Arial','B',8);
-	$this->Cell(40,10,'RECEIPT',0,0,'C');
+	$this->Cell(200,100,'RECEIPT',0,0,'C');
    
 }
 
@@ -27,7 +27,7 @@ function Header(){
 // Page footer
 function Footer(){
     // Position at 1.5 cm from bottom
-    $this->SetY(-15);
+    $this->SetY(-30);
     // Arial italic 8
     $this->SetFont('Arial','I',8);
     // Page number
