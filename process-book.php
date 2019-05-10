@@ -34,7 +34,7 @@ else
 {
 
         $query = "INSERT INTO `zones` (phone,status, email, model, vehicle,street,plot,platenumber,account,charge,d1,d2) VALUES ('$phone','$status', '$email', '$model', '$vehicle' , '$street', '$plot', '$plateno', '$account','$charge','$from','$to')";
-        $result = mysqli_query($query);
+        $result = mysqli_query($conn, $query);
 		
 		$var = $_SESSION["from"];
 $date = str_replace('/', '.', $var);
