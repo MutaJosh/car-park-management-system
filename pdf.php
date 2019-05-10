@@ -39,7 +39,6 @@ function Footer()
 $phone=$_SESSION['phone'];
 $sql=mysqli_query($conn, "SELECT * FROM zones WHERE phone='$phone' and status='RESERVED'");
 	while($row=mysqli_fetch_array($sql)){
-    "<center>"	
 // Instanciation of inherited class
 $pdf = new PDF();
 $pdf->AliasNbPages();
@@ -47,7 +46,7 @@ $pdf->AddPage();
 $pdf->SetFont('Times','',10);
 $pdf->Ln(1);
 $pdf->Cell(0,8,'______________________',0,1);
-$pdf->SetFont('Times','',6);
+$pdf->SetFont('Cursive','',6);
 $pdf->Cell(0,1,'Date: '. $row['d1'],0,1);
 $pdf->SetFont('Times','',10);
 $pdf->Cell(0,7,'Number Plate : '. $row['platenumber'],0,1);
@@ -59,7 +58,7 @@ $pdf->Cell(40,3,'Note: Parking Fee is not refundable',0,1,'C');
 $pdf->SetFont('Times','',6);
 $pdf->Cell(0,7,'You may need to provide this receipt on request',0,1);
 $pdf->Cell(0,7,'',0,1);
-    ();
-
-$pdf->Output}
+    
+$pdf->Output();
+}
 ?>
