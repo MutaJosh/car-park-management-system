@@ -4,19 +4,19 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();}
 require('fpdf.php');
 include('inc/connect.php');
-class PDF extends FPDF
-{
+class PDF extends FPDF{
+
 // Page header
 function Header(){
     // Logo
-    $this->Image('src/logo.png',10,6,30);
+    $this->Image('src/logo.png',95,30,40);
     // Arial bold 15
     $this->SetFont('Arial','B',12);
     // Move to the right
-    $this->Cell(30);
-	 $this->Ln(6);
+    $this->Cell(100);
+	 $this->Ln(10);
     // Title
-    $this->Cell(40,10,'KIMIRONKO CAR PARK',0,0,'C');
+    $this->Cell(220,60,'KIMIRONKO CAR PARK',0,0,'C');
 	$this->Ln(6);
 	$this->SetFont('Arial','B',8);
 	$this->Cell(40,10,'RECEIPT',0,0,'C');
@@ -25,8 +25,7 @@ function Header(){
 
 
 // Page footer
-function Footer()
-{
+function Footer(){
     // Position at 1.5 cm from bottom
     $this->SetY(-15);
     // Arial italic 8
