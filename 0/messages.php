@@ -37,8 +37,8 @@
                             </thead>
                             <tbody>
 							<?php 
-							$query=mysql_query("select * from messages")or die(mysql_error());
-							while($row=mysql_fetch_array($query)){
+							$query=mysqli_query($conn, "select * from messages")or die(mysqli_error());
+							while($row=mysqli_fetch_array($query)){
 							$id=$row['id'];
 							?>
                               

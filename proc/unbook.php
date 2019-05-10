@@ -2,20 +2,20 @@
  
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
-	$connection = mysql_connect("localhost", "root", "");
-	$db = mysql_select_db("cpms", $connection);
+	$connection = mysqli_connect("localhost", "root", "");
+	$db = mysqli_select_db($connection, "cpms");
 	$phone=$_SESSION['phone'];
-	$query = mysql_query("select * from users where pl_booked='YES' AND phone='$phone'", $connection);
-	$rows = mysql_num_rows($query);
+	$query = mysqli_query($connection, "select * from users where pl_booked='YES' AND phone='$phone'");
+	$rows = mysqli_num_rows($query);
 	//echo $rows;
-	$row=mysql_fetch_array($query);
+	$row=mysqli_fetch_array($query);
 	//if ($rows == 1) {
-	mysql_connect("localhost", "root", "") or die(mysql_error());
-    mysql_select_db("cpms") or die(mysql_error());
+	mysqli_connect("localhost", "root", "") or die(mysqli_error());
+    mysqli_select_db($connection, "cpms") or die(mysql_error());
 	$sql = "UPDATE users SET pl_booked = 'NO' WHERE phone = '$phone'";
-	mysql_query($sql);
+	mysqli_query($connection, $sql);
 	$sql = "UPDATE zones SET status = 'UNBOOKED' WHERE phone = '$phone'";
-	mysql_query($sql);
+	mysqli_query($connection, $sql);
 	 header("Location: ../success_unbook.php");
 	//}
 		

@@ -7,17 +7,16 @@ if (session_status() == PHP_SESSION_NONE) {
 
 if (isset($_POST['Submit'])) {
 	
-	$phone=$_POST['phone'];
+	$phone=$_POST['username'];
 	$password=$_POST['password'];
 
 	// To protect MySQL injection for Security purpose
 	$phone = stripslashes($phone);
 	$password = stripslashes($password);
 
-	/*$phone = mysql_real_escape_string($phone);
-	$password = mysql_real_escape_string($password);*/
+	/*$phone = mysqli_real_escape_string($phone);
+	$password = mysqli_real_escape_string($password);*/
 
-	// Establishing Connection with Server by passing server_name, user_id and password as a parameter
 	$connection = mysqli_connect("localhost", "root", "");
 	// Selecting Database
 	$db = mysqli_select_db($connection, "cpms" );
@@ -31,19 +30,17 @@ if (isset($_POST['Submit'])) {
 		$_SESSION['password']=$password; // Initializing Session
 		$_SESSION['access']=$row['access'];
 	if ($row['access']==2){
-	header("Location: ../index.php");
+		header("Location: ../index.php");
 	}
 	if ($row['access']==0){
-	header("Location: ../0/index.php");
+		header("Location: ../0/index.php");
 	}
 	if ($row['access']==1){
-	header("Location: ../0/index.php");
+		header("Location: ../0/index.php");
 	}
 	}
 	
 	
 	
 }
-
-//
 ?>

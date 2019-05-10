@@ -7,11 +7,10 @@ if (isset($_POST['delete'])){
 $id=$_POST['selector'];
 
 $N = count($id);
-for($i=0; $i < $N; $i++)
-{
-	$result = mysql_query("DELETE FROM users where id='$id[$i]'");
+for($i=0; $i < $N; $i++){
+	$result = mysqli_query($conn, "DELETE FROM users where id='$id[$i]'");
 }
-header("location: index.php");
+	header("location: index.php");
 
 }
 ?>

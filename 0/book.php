@@ -26,7 +26,7 @@
 			$query = "select * from streets where street='KIJABE ST'";
 			$result = $conn->query($query);
 			while($rows = $result->fetch_assoc()) {
-			echo '<p>KIJABE ST : '.$rows['available'].' PL Available</p>';
+			echo '<p>KIMIRONKO BUS STATION: '.$rows['available'].' PL Available</p>';
 			}
 	?>
 		

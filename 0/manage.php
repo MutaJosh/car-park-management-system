@@ -37,8 +37,8 @@
                             </thead>
                             <tbody>
 							<?php 
-							$query=mysql_query("select * from users where access=1")or die(mysql_error());
-							while($row=mysql_fetch_array($query)){
+							$query=mysqli_query($conn, "select * from users where access=1")or die(mysql_error());
+							while($row=mysqli_fetch_array($query)){
 							$id=$row['id'];
 							?>
                               

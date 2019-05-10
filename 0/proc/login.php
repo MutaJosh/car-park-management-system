@@ -13,17 +13,17 @@ if (isset($_POST['Submit'])) {
 	// To protect MySQL injection for Security purpose
 	$phone = stripslashes($phone);
 	$password = stripslashes($password);
-	$phone = mysql_real_escape_string($phone);
-	$password = mysql_real_escape_string($password);
+	/*$phone = mysql_real_escape_string($phone);
+	$password = mysql_real_escape_string($password);*/
 	// Establishing Connection with Server by passing server_name, user_id and password as a parameter
-	$connection = mysql_connect("localhost", "root", "");
+	$connection = mysqli_connect("localhost", "root", "");
 	// Selecting Database
-	$db = mysql_select_db("cpms", $connection);
+	$db = mysqli_select_db($connection, "cpms");
 	// SQL query to fetch information of registerd users and finds user match.
-	$query = mysql_query("select * from users where password='$password' AND phone='$phone'", $connection);
-	$rows = mysql_num_rows($query);
+	$query = mysqli_query($connection, "select * from users where password='$password' AND phone='$phone'");
+	$rows = mysqli_num_rows($query);
 	//echo $rows;
-	$row=mysql_fetch_array($query);
+	$row=mysqli_fetch_array($query);
 	if ($rows == 1) {
 		$_SESSION['phone']=$phone; // Initializing Session
 		$_SESSION['password']=$password; // Initializing Session
