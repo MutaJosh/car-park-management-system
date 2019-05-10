@@ -23,7 +23,7 @@ $result=mysqli_query($conn, $sql);
 
 
 // Mysql_num_row is counting table row
-$count=mysql_num_rows($result);
+$count=mysqli_num_rows($result);
 
 // If
 
@@ -34,7 +34,7 @@ else
 {
 
         $query = "INSERT INTO `zones` (phone,status, email, model, vehicle,street,plot,platenumber,account,charge,d1,d2) VALUES ('$phone','$status', '$email', '$model', '$vehicle' , '$street', '$plot', '$plateno', '$account','$charge','$from','$to')";
-        $result = mysql_query($query);
+        $result = mysqli_query($query);
 		
 		$var = $_SESSION["from"];
 $date = str_replace('/', '.', $var);
