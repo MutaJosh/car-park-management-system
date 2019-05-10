@@ -8,7 +8,7 @@ if (session_status() == PHP_SESSION_NONE) {
 	$query = mysqli_query($connection, "select * from users where pl_booked='YES' AND phone='$phone'");
 	$rows = mysqli_num_rows($query);
 	//echo $rows;
-	$row=mysql_fetch_array($query);
+	$row=mysqli_fetch_array($query);
 	if ($rows == 1) {
 	 header("Location: ../booked.php");
 	}else{
