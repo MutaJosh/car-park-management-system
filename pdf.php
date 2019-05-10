@@ -16,7 +16,7 @@ function Header(){
     $this->Cell(100);
 	 $this->Ln(10);
     // Title
-    $this->Cell(210,60,'KIMIRONKO CAR PARK',0,0,'C');
+    $this->Cell(200,60,'KIMIRONKO CAR PARK',0,0,'C');
 	$this->Ln(6);
 	$this->SetFont('Arial','B',8);
 	$this->Cell(200,100,'RECEIPT',10,0,'C');
@@ -29,7 +29,7 @@ function Footer(){
     // Position at 1.5 cm from bottom
     $this->SetY(-30);
     // Arial italic 8
-    $this->SetFont('Arial','I',8);
+    $this->SetFont('Arial','I',10);
     // Page number
     $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
 }
@@ -55,7 +55,7 @@ $pdf->SetFont('Times','B',6);
 $pdf->Cell(40,3,'Note: Parking Fee is not refundable',0,1,'C');
 $pdf->SetFont('Times','',6);
 $pdf->Cell(0,7,'You may need to provide this receipt on request',0,1);
-$pdf->Cell(0,7,'',0,1);
+//$pdf->Cell(0,7,'',0,1);
     
 $pdf->Output();
 }
