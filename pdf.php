@@ -37,7 +37,7 @@ function Footer()
 }
 }
 $phone=$_SESSION['phone'];
-$sql=mysql_query("SELECT * FROM zones WHERE phone='$phone' and status='RESERVED'");
+$sql=mysqli_query($conn, "SELECT * FROM zones WHERE phone='$phone' and status='RESERVED'");
 	while($row=mysql_fetch_array($sql)){	
 // Instanciation of inherited class
 $pdf = new PDF();
