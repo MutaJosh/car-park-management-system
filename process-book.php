@@ -15,9 +15,11 @@
 			 $phone = $_SESSION["phone"];
 			
 			/*CHECK IF RESERVED */
+
+$conn = mysqli_connect("localhost", "root", "", "cpms");			
 			
 $sql="SELECT * FROM zones WHERE street='$street' and plot='$plot' and status='RESERVED'";
-$result=mysql_query($sql);
+$result=mysqli_query($conn, $sql);
 
 
 // Mysql_num_row is counting table row
