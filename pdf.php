@@ -49,7 +49,7 @@ $pdf->Cell(0,8,'______________________',0,1);
 $pdf->SetFont('Times','',6);
 $pdf->Cell(0,1,'Date: '. $row['d1'],0,1);
 $pdf->SetFont('Times','',10);
-$pdf->Cell(0,7,'Number Plate : '. $row['platenumber'],0,1);
+$pdf->Cell(0,7,'Plate Number : '. $row['platenumber'],0,1);
 $pdf->Cell(0,4,'Mpesa Code : '. $row['account'],0,1);
 $pdf->Cell(0,6,'Amount : 120/-',0,1);
 $pdf->Cell(0,5,'______________________',0,1);
