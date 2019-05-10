@@ -19,7 +19,7 @@ function Header(){
     $this->Cell(210,60,'KIMIRONKO CAR PARK',0,0,'C');
 	$this->Ln(6);
 	$this->SetFont('Arial','B',8);
-	$this->Cell(200,100,'RECEIPT',0,0,'C');
+	$this->Cell(200,100,'RECEIPT',10,0,'C');
    
 }
 
@@ -41,8 +41,8 @@ $sql=mysqli_query($conn, "SELECT * FROM zones WHERE phone='$phone' and status='R
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
-$pdf->SetFont('Times','',10);
-$pdf->Ln(2);
+$pdf->SetFont('Times','',15);
+$pdf->Ln(55);
 $pdf->Cell(0,8,'______________________',0,1);
 $pdf->SetFont('Times','',6);
 $pdf->Cell(0,1,'Date: '. $row['d1'],0,1);
