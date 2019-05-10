@@ -24,6 +24,6 @@ if ($conn->connect_error) {
 }
 
 //connection
-mysql_connect("localhost", "root", "") or die(mysql_error());
-			mysql_select_db("cpms") or die(mysql_error());
+mysqli_connect("localhost", "root", "") or die(mysqli_error());
+			mysqli_select_db($conn, "cpms") or die(mysqli_error());
 ?>
