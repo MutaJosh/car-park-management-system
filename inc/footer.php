@@ -1,5 +1,5 @@
 
 <footer>
 	<p>Car Park Management | &copy; 2019</p> <br>
-	<a href="https://josuemutabazi.000webhostapp.com" tar></a>
+	Developed by <a href="https://josuemutabazi.000webhostapp.com" target="_blank">Josue Mutabazi</a>
 </footer>
