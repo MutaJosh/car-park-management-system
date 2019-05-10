@@ -38,7 +38,8 @@ function Footer()
 }
 $phone=$_SESSION['phone'];
 $sql=mysqli_query($conn, "SELECT * FROM zones WHERE phone='$phone' and status='RESERVED'");
-	while($row=mysql_fetch_array($sql)){	
+	while($row=mysqli_fetch_array($sql)){
+    "<center>"	
 // Instanciation of inherited class
 $pdf = new PDF();
 $pdf->AliasNbPages();
@@ -58,7 +59,7 @@ $pdf->Cell(40,3,'Note: Parking Fee is not refundable',0,1,'C');
 $pdf->SetFont('Times','',6);
 $pdf->Cell(0,7,'You may need to provide this receipt on request',0,1);
 $pdf->Cell(0,7,'',0,1);
+    ();
 
-$pdf->Output();
-}
+$pdf->Output}
 ?>
