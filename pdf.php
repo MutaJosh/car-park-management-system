@@ -7,8 +7,7 @@ include('inc/connect.php');
 class PDF extends FPDF
 {
 // Page header
-function Header()
-{
+function Header(){
     // Logo
     $this->Image('src/logo.png',10,6,30);
     // Arial bold 15
@@ -17,7 +16,7 @@ function Header()
     $this->Cell(30);
 	 $this->Ln(6);
     // Title
-    $this->Cell(40,10,'VALEMAX CAR PARK',0,0,'C');
+    $this->Cell(40,10,'KIMIRONKO CAR PARK',0,0,'C');
 	$this->Ln(6);
 	$this->SetFont('Arial','B',8);
 	$this->Cell(40,10,'RECEIPT',0,0,'C');
@@ -50,7 +49,7 @@ $pdf->SetFont('Times','',6);
 $pdf->Cell(0,1,'Date: '. $row['d1'],0,1);
 $pdf->SetFont('Times','',10);
 $pdf->Cell(0,7,'Plate Number : '. $row['platenumber'],0,1);
-$pdf->Cell(0,4,'Mpesa Code : '. $row['account'],0,1);
+$pdf->Cell(0,4,'Visa Card No. : '. $row['account'],0,1);
 $pdf->Cell(0,6,'Amount : 120/-',0,1);
 $pdf->Cell(0,5,'______________________',0,1);
 $pdf->SetFont('Times','B',6);
